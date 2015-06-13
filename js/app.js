@@ -16,7 +16,6 @@ $(document).ready(function(){
     var userGuess = 1;
     var guessCount = 0;
     var magicNumber = Math.floor((Math.random() * 100) + 1);
-    console.log(magicNumber); // Output magic number to console for testing
 
     /*Sets up new game*/
     function startNewGame()
