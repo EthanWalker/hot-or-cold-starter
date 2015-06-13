@@ -26,6 +26,7 @@ $(document).ready(function(){
         $("#guessList").empty();
         $('#count').html("0")
         guessCount = 0;
+        $("#userGuess").val("");
         $("#userGuess").focus();
     }
     /*Give Feedback to the User*/
@@ -89,11 +90,11 @@ $(document).ready(function(){
         e.preventDefault();
         userGuess = parseInt($("#userGuess").val());
         giveUserFeedback(userGuess);
+        $("#userGuess").val("");
         $("#userGuess").focus();
     });
     $( ".new" ).click(function() {
         startNewGame();
-        console.log(magicNumber);
     });
 });
 
