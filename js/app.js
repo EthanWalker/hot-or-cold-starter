@@ -18,6 +18,17 @@ $(document).ready(function(){
     var magicNumber = Math.floor((Math.random() * 100) + 1);
     console.log(magicNumber); // Output magic number to console for testing
 
+   /*Sets up new game*/
+    function startNewGame()
+    {
+        //alert("New Game Firing!");        
+        $('#feedback').html("Make your Guess!")
+        magicNumber = Math.floor((Math.random() * 100) + 1);
+        $("#guessList").empty();
+        $('#count').html("0")
+        guessCount = 0;
+        $("#userGuess").focus();
+    }
 });
 
 
