@@ -50,25 +50,39 @@ $(document).ready(function(){
             }
             else if(guessDifference >= 50) 
             {
-                $('#feedback').html("Ice cold")
+                $('#feedback').html("Ice Cold!" + highLow(userGuess))
             }
             else if(guessDifference >= 30)
             {
-                $('#feedback').html("Cold")
+                $('#feedback').html("Cold!" + highLow(userGuess))
             }
             else if(guessDifference >= 20)
             {
-                $('#feedback').html("Warm")
+                $('#feedback').html("Warm!" + highLow(userGuess))
             }
             else if(guessDifference >= 10)
             {
-                $('#feedback').html("Hot")
+                $('#feedback').html("Hot!" + highLow(userGuess))
             }
             else
             {
-                $('#feedback').html("Very Hot!")
+                $('#feedback').html("Very Hot!" + highLow(userGuess))
             }
         }
+    }
+    /*Determine if the guess was high or low*/
+    function highLow(userGuess)
+    {
+        var highMsg = " Too High!";
+        var lowMsg  = " Too Low!";
+        if(userGuess > magicNumber)
+        {
+            return highMsg;
+        }
+        else
+        {
+            return lowMsg;
+        }   
     }
 
     /*MAIN*/
