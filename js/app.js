@@ -31,8 +31,44 @@ $(document).ready(function(){
     }
     /*Give Feedback to the User*/
     function giveUserFeedback(userGuess)
-    {   
+    {      
 
+        if (userGuess > 100 || userGuess < 1 || !userGuess) {
+            alert("Try again, that wasn't a number between 1 and 100.")
+            return false;
+        }
+        else
+        {
+            $("#guessList").append("<li>" + userGuess + "</li>");        
+            var guessDifference = Math.abs(userGuess - magicNumber);
+            guessCount++;
+            $('#count').html(guessCount); 
+
+            if(magicNumber === userGuess) 
+            {
+                $('#feedback').html("CORRECT!")
+            }
+            else if(guessDifference >= 50) 
+            {
+                $('#feedback').html("Ice cold")
+            }
+            else if(guessDifference >= 30)
+            {
+                $('#feedback').html("Cold")
+            }
+            else if(guessDifference >= 20)
+            {
+                $('#feedback').html("Warm")
+            }
+            else if(guessDifference >= 10)
+            {
+                $('#feedback').html("Hot")
+            }
+            else
+            {
+                $('#feedback').html("Very Hot!")
+            }
+        }
     }
 
     /*MAIN*/
