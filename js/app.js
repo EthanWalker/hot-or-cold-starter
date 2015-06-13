@@ -18,7 +18,7 @@ $(document).ready(function(){
     var magicNumber = Math.floor((Math.random() * 100) + 1);
     console.log(magicNumber); // Output magic number to console for testing
 
-   /*Sets up new game*/
+    /*Sets up new game*/
     function startNewGame()
     {
         //alert("New Game Firing!");        
@@ -29,6 +29,23 @@ $(document).ready(function(){
         guessCount = 0;
         $("#userGuess").focus();
     }
+    /*Give Feedback to the User*/
+    function giveUserFeedback(userGuess)
+    {   
+
+    }
+
+    /*MAIN*/
+    $( "#guessButton" ).click(function(e) {
+        e.preventDefault();
+        userGuess = parseInt($("#userGuess").val());
+        giveUserFeedback(userGuess);
+        $("#userGuess").focus();
+    });
+    $( ".new" ).click(function() {
+        startNewGame();
+        console.log(magicNumber);
+    });
 });
 
 
